@@ -9,7 +9,7 @@ const {inbox} = emails
       <ul>
           {inbox.map((email, i) => (
             <li key={i}>
-              <Link to={`/email/${email.id}`}>
+              <Link to={`/${email}/${email.id}`}>
                 <strong>From: {email.from}</strong> Subject: {email.title}
               </Link>
             </li>
