@@ -3,7 +3,7 @@ import {Link} from 'react-router'
 
 const MailboxLink = ({type}) => (
   <li>
-    <Link to={`mailbox-${type}`}>{type}</Link>
+    <Link to={`${type}`}>{type}</Link>
   </li>
 );
 

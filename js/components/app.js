@@ -2,6 +2,8 @@ import React from 'react'
 import MailboxList from './mailbox-list'
 import EMAILS from '../emails'
 
+// const email = () => ()
+
 export default function App(props) {
   return (
     <div>
@@ -11,7 +13,7 @@ export default function App(props) {
           <MailboxList emails={EMAILS}/>
         </aside>
         <main>
-          {props.children}
+          {React.cloneElement(props.children, {emails:EMAILS})}
         </main>
       </div>
     </div>

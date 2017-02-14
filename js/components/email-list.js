@@ -1,21 +1,19 @@
 import React from 'react'
 import {Link} from 'react-router'
 
-export default function EmailList(props) {
 
+export default function EmailList({emails}) {
+const {inbox} = emails
   return (
     <div>
       <ul>
-        <li>
-          <Link to="mailbox-one/email-1">
-            <strong>From: Ryan</strong> Subject: Hello Ryan
-          </Link>
-        </li>
-        <li>
-          <Link to="mailbox-two/email-2">
-            <strong>From: Bob</strong> Subject: Hello Bob
-          </Link>
-        </li>
+          {inbox.map((email, i) => (
+            <li key={i}>
+              <Link to={`/email/${email.id}`}>
+                <strong>From: {email.from}</strong> Subject: {email.title}
+              </Link>
+            </li>
+          ))}
       </ul>
       <Link to="/">Back</Link>
     </div>
